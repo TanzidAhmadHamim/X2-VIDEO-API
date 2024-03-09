@@ -1,4 +1,4 @@
-exports.name = '/humaiyun';
+exports.name = '/broken';
 exports.index = async (req, res, next) => {
     const url = [
   "https://drive.google.com/uc?id=16KeE4J7L2Pd8cCKIBvlwEPP07A92b-eb",
