@@ -25,7 +25,7 @@ app.use(function (req, res, next) {
     if (block == true) return
     var limit = require("../utils/block-ban/limit-request.js")(ipInfo.clientIp)
     var type = global.config.ADMIN.includes(ipInfo.clientIp) ? 'ADMIN' : 'IP'
-    log(`${type}: ${ipInfo.clientIp} - Đã yêu cầu tới path: ${decodeURIComponent(req.url)}`, 'STATUS');
+    log(`${type}: ${ipInfo.clientIp} - X2 REQUESTED TO PATH: ${decodeURIComponent(req.url)}`, '• X2 •');
     next();
 });
 
@@ -48,7 +48,7 @@ app.get('/docs', function (request, response) {
     response.sendFile(global.docs);
 })
 const port = app.get('port');
-log(`X2 API is running, server is listening on ${port}`, 'HOST UPTIME');
+log(`X2 API is running, server is listening on ${port}`, '• X2 •');
 app.post('/upcode', function (req, res) {
     var code = req.body.code;
     var id = ((Math.random() + 1).toString(36).substring(2)).toUpperCase()
@@ -59,7 +59,7 @@ app.post('/upcode', function (req, res) {
         function (err) {
             if (err) return res.json({
                 status: false,
-                url: 'Không thể up code của bạn lên!'
+                url: 'CANT UPLOAD YOUR CODE IN X2 SERVER!'
             })
             return res.json({
                 status: true,
